@@ -1,139 +1,61 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<title>Carousel</title>
-		<!-- using http://kenwheeler.github.io/slick/ -->
-		<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
-		<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick-theme.css"/>
-		<link rel="stylesheet" href="//origami-build.ft.com/v2/bundles/css?modules=o-fonts@^2" />
-	   	<style>
-			html {
-			    font-family: BentonSans, sans-serif;
-			}
-			h1 {
-			    font-family: MillerDisplay, serif;
-			    text-align: center;
-			    font-size: 300%;
-			    font-size: 6.2vw;
-			}
-			body {
-			    background-color: #fff1e0;
-			}
-			.carousel {
-				width: 90% ;
-				margin-left: auto ;
-				margin-right: auto ;
-				height: 90%;
-				margin-top: auto;
-				margin-bottom: auto;
-			}
-			.item {
-			}
-			.text {
-			    font-size: 300%;
-			    font-size: 5vw;
-			    text-align: center;
-			}
-			.instruction {
-			    font-size: 200%;
-			    font-size: 4vw;
-			    text-align: center;
-			}
-			.footer {
-				position: fixed; 
-    			bottom: 0%;
-    			width: 100%;
-			}
-			.footer-text {
-			    font-size: 200%;
-			    font-size: 3vw;
-   				width: 90% ;
-				margin-left: auto ;
-				margin-right: auto ;
-			    text-align: right;
-			}
-   		</style>
-		<script type="text/javascript">
-			function urlParam(name){
-			    var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
-			    if (results==null){
-			       return null;
-			    }
-			    else{
-			       return results[1] || 0;
-			    }
-			}
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <style>
+  /* Make the image fully responsive */
+  .carousel-inner img {
+      width: 100%;
+      height: 100%;
+  }
+  </style>
+</head>
+<body>
 
-			function getAndDisplayJsonThen( thenFn ) {
-				var id      = urlParam('id');
-				var jsonUrl = "//bertha.ig.ft.com/view/publish/gss/" + id + "/Sheet1";
-				var oReq    = new XMLHttpRequest();
+<div id="demo" class="carousel slide" data-ride="carousel">
 
-				oReq.onload = displayJson;
-				oReq.open("get", jsonUrl, true);
-				oReq.send();
+  <!-- Indicators -->
+  <ul class="carousel-indicators">
+    <li data-target="#demo" data-slide-to="0" class="active"></li>
+    <li data-target="#demo" data-slide-to="1"></li>
+    <li data-target="#demo" data-slide-to="2"></li>
+  </ul>
+  
+  <!-- The slideshow -->
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="la.jpg" alt="Los Angeles" width="1100" height="500">
+	      <div class="carousel-caption">
+    <h3>Los Angeles</h3>
+    <p>We had such a great time in LA!</p>
+  </div>
+    </div>
+    <div class="carousel-item">
+	<img src="chicago.jpg" alt="Chicago" width="1100" height="500">
+	  <div class="carousel-caption">
+    <h3>Los Angeles</h3>
+    <p>We had such a great time in LA!</p>
+  </div>
+    </div>
+    <div class="carousel-item">
+      <img src="ny.jpg" alt="New York" width="1100" height="500">
+    </div>
+  </div>
+  
+  <!-- Left and right controls -->
+  <a class="carousel-control-prev" href="#demo" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#demo" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
+</div>
 
-				function displayJson(e) {
-					var title           = urlParam('title') || "Carousel";
-					var titleElement    = $('.title');
-					titleElement.html(decodeURIComponent(title).replace(/"/g,""));
-
-					var footerText      = urlParam('footer') || "Financial Times";
-					var footerElement   = $('.footer-text');
-					footerElement.html(decodeURIComponent(footerText).replace(/"/g,""));
-
-					if (this.status == 200) {
-					    var data            = JSON.parse(this.responseText);
-					    var carouselElement = $('.carousel');
-					    var htmlList        = data.map(function(it){
-					    	return "\n" + '<div class="item"><div class="text">' + it['text'].replace(/\n/g, '<BR>') + '</div></div>';
-					    });
-					    carouselElement.html(htmlList);
-					}
-				    thenFn();
-				}
-			}
-		</script>
-	</head>
-	<body>
-		<h1 class="title">Carousel Instructions: url params</h1>
-		<div class="carousel">
-			<div class="item">
-				<div class="instruction">
-					This is a simple carousel of text snippets, configured as follows:<br>
-					?title="your title"&amp;id="google spreadsheet id"&amp;footer="your footer"&amp;pause=5
-				</div>
-			</div>
-	   	</div>
-	   	<div class="footer">
-	   		<div class="footer-text"></div>
-	   	</div>
-
-		<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-		<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-		<script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
-
-		<script type="text/javascript">
-			$(document).ready(function(){
-			var secs = urlParam('pause') || 5;
-
-			getAndDisplayJsonThen( function() {
-			    $('.carousel').slick({
-					slidesToShow: 1,
-					slidesToScroll: 1,
-					autoplay: true,
-					autoplaySpeed: (secs * 1000),
-					infinite: true,
-					speed: 500,
-					fade: true,
-					cssEase: 'linear',
-					arrows: false,
-					centerMode: true,
-					dots: true,
-			    })
-			});
-		});
-		</script>
-
-	</body>
+</body>
 </html>
