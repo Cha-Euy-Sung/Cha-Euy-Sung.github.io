@@ -17,7 +17,14 @@
  
   
   <style>
-
+.fixedContainer {
+    background-color:#ddd;
+    position: fixed;
+    padding: 2em;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
     img {
   display: block;
   margin-left: auto;
@@ -90,7 +97,7 @@ width: 1100;
   <h2>   </h2>
   
   
-<div class="container">
+<div class="fixedContainer">
   <div class="row">
   
 <div id="demo" class="carousel slide" data-ride="carousel">
@@ -124,7 +131,7 @@ width: 1100;
   </a>
 </div>
   </div>
-    <tr>   </tr>
+ 
   <div class="row">
     <div class="col-sm-4">
       <h3>Column 1</h3>
