@@ -399,6 +399,13 @@ mark,
   max-width: 100%;
   height: auto; }
 
+ .img-fluid-center {
+  display: block;
+  max-width: 45%;
+  margin-left: auto;
+  margin-right: auto;
+  height: auto; }
+
 .img-thumbnail {
   padding: 0.25rem;
   background-color: #fff;
