@@ -172,12 +172,14 @@ header {
   @media (max-width: 767.98px) {
     .a-block {
       padding: 30px; } }
+  .a-block.height-fl {
+    height: 600px; }
   .a-block.height-lg {
     height: 500px; }
   .a-block.height-md {
     height: 400px; }
   .a-block:before {
-    background: #000;
+    background: #ffffff00;
     position: absolute;
     content: "";
     z-index: 1;
@@ -600,9 +602,11 @@ textarea.form-control {
     height: 10px;
     margin: 5px;
     border-radius: 50%;
-    background: #e6e6e6; }
+    background: #ffffff00; }
     .owl-carousel .owl-dots .owl-dot.active {
-      background: #252729; }
+      background: #ffffff00; }
+
+
 
 .owl-carousel.home-slider {
   z-index: 1;
@@ -676,16 +680,16 @@ textarea.form-control {
       height: 10px;
       margin: 5px;
       border-radius: 50%;
-      border: 2px solid rgba(255, 255, 255, 0.5);
+      border: 2px solid rgba(#ffffff00);
       outline: none !important;
       position: relative;
       -webkit-transition: .3s all ease;
       -o-transition: .3s all ease;
       transition: .3s all ease; }
       .owl-carousel.home-slider .owl-dots .owl-dot.active {
-        border: 2px solid white; }
+        border: 2px solid rgba(#ffffff00); }
         .owl-carousel.home-slider .owl-dots .owl-dot.active span {
-          background: white; }
+          background: rgba(#ffffff00); }
 
 .owl-carousel.major-caousel .owl-stage-outer {
   padding-top: 30px;
@@ -778,7 +782,7 @@ textarea.form-control {
   display: block;
   margin-bottom: 15px;
   padding-bottom: 15px;
-  border-bottom: 1px dotted #dee2e6; }
+  border-bottom: 1px dotted #ffffff00; }
 
 .sidebar {
   padding-left: 5em; }
@@ -1467,3 +1471,4 @@ body-notfound {
     height: 86px;
   }
 }
+
