@@ -618,7 +618,7 @@ textarea.form-control {
     -o-transition: .3s all ease;
     transition: .3s all ease; }
     .owl-carousel.home-slider .owl-nav button {
-      color: #fff; }
+      color: #B0B0B0; }
   .owl-carousel.home-slider:focus .owl-nav, .owl-carousel.home-slider:hover .owl-nav {
     opacity: 1;
     visibility: visible; }
